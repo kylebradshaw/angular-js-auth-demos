@@ -37,7 +37,7 @@ angular.module('authDemo1', ['ngRoute'])
 	.factory('authenticationInterceptor', function(userSession, $location) {
 		return {
 			request: function(request) {
-				if(request.url.match(/api/) && userSession.loggedIn==false) {
+				if(request.url.match(/api/) && !userSession.loggedIn) {
 					var previousPage = $location.path();
 					$location.path('/login').search({
 						previous: previousPage
@@ -73,7 +73,6 @@ angular.module('authDemo1', ['ngRoute'])
 	})
 	.controller("LogoutController", function(userSession, $location){
 		userSession.loggedIn=false;
-		console.log('loggedout');
 		$location.path('/login');
 	})
 	.controller('HomePageController', function($scope, repos) {

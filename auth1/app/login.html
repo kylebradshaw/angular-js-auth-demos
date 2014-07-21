@@ -1,5 +1,6 @@
 <p>This is the login page.</p>
 <form name='loginForm' ng-controller='LoginController as ctrl' ng-submit='loginForm.$valid && ctrl.login(username, password)'>
+	<p ng-if='loginForm.username.$error.required'>You did not enter a username</p>
 	<p ng-if='ctrl.loginFailed'>Your username + password combination is invalid</p>
 	<div class='field'>
 		<label>Username: </label>
