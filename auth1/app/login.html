@@ -1,14 +1,14 @@
 <p>This is the login page.</p>
-<form name='loginForm' ng-controller='LoginController as ctrl' ng-submit='loginForm.$valid && ctrl.login(username, password)'>
-	<p ng-if='loginForm.username.$error.required'>You did not enter a username</p>
-	<p ng-if='ctrl.loginFailed'>Your username + password combination is invalid</p>
-	<div class='field'>
+<form name="loginForm" ng-controller="LoginController as ctrl" ng-submit="loginForm.$valid && ctrl.login(username, password)">
+	<p ng-if="loginForm.username.$error.required">You did not enter a username</p>
+	<p ng-if="ctrl.loginFailed">Your username + password combination is invalid</p>
+	<div class="form-group">
 		<label>Username: </label>
-		<input type='text' ng-model='username' name='username' />
+		<input class="form-control" autofocus type="text" ng-model="username" name="username" placeholder="user" />
 	</div>
-	<div class='field'>
+	<div class="form-group">
 		<label>Password: </label>
-		<input type='password' ng-model='password' name='password' />
+		<input class="form-control" type="password" ng-model="password" placeholder="password" name="password" />
 	</div>
 	<input type="submit" value="Submit">
 </form>

@@ -1,6 +1,6 @@
 angular.module('authDemo1', ['ngRoute'])
 	.config(function($httpProvider, $routeProvider, $locationProvider) {
-		
+
 		// add interceptor
 		$httpProvider.interceptors.push('authenticationInterceptor');
 
@@ -53,7 +53,7 @@ angular.module('authDemo1', ['ngRoute'])
 		};
 	})
 	.controller('MainController', function($scope, userSession) {
-		$scope.loggedIn = userSession.loggedIn; 
+		$scope.loggedIn = userSession.loggedIn;
 		$scope.$watch(function(){return userSession.loggedIn}, function(newVal, oldVal){
 			$scope.loggedIn = newVal;
 		})
